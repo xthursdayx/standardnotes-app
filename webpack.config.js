@@ -35,15 +35,17 @@ module.exports = {
         { from: 'public/robots.txt', to: 'robots.txt' },
         { from: 'public/404.html', to: '404.html' },
         { from: 'public/422.html', to: '422.html' },
-        { from: 'public/500.html', to: '500.html' }
+        { from: 'public/500.html', to: '500.html' },
+        { from: 'public/extensions/extensions-manager/dist', to: 'extensions/extensions-manager/dist' },
+        { from: 'public/extensions/batch-manager/dist', to: 'extensions/batch-manager/dist' }
       ],
     }),
     new HtmlWebpackPlugin({
       template: './public/index.ejs',
       inject: 'head',
       SF_DEFAULT_SERVER: process.env.SF_DEFAULT_SERVER || 'https://sync.standardnotes.org',
-      EXTENSIONS_MANAGER_LOCATION: process.env.EXTENSIONS_MANAGER_LOCATION || 'public/extensions/extensions-manager/dist/index.html',
-      BATCH_MANAGER_LOCATION: process.env.BATCH_MANAGER_LOCATION || 'public/extensions/batch-manager/dist/index.min.html'
+      EXTENSIONS_MANAGER_LOCATION: process.env.EXTENSIONS_MANAGER_LOCATION || 'extensions/extensions-manager/dist/index.html',
+      BATCH_MANAGER_LOCATION: process.env.BATCH_MANAGER_LOCATION || 'extensions/batch-manager/dist/index.min.html'
     }),
   ],
   devtool: 'source-map',
