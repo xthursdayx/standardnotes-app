@@ -11,7 +11,7 @@
     "yarn": ">=1.22.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress",
+    "start:dev": "webpack-dev-server --progress",
     "prebuild": "yarn submodules",
     "build": "webpack --mode production",
     "submodules": "git submodule update --init --force --remote",
