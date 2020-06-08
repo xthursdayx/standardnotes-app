@@ -36,3 +36,7 @@ dump.rdb
 !/public/uploads/.keep
 
 .vscode
+
+# Yarn & NPM
+package-lock.json
+yarn-error.log
