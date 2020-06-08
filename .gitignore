@@ -40,3 +40,6 @@ dump.rdb
 # Yarn & NPM
 package-lock.json
 yarn-error.log
+
+# Build
+/dist/*
