@@ -72,6 +72,7 @@ export class AppState {
   readonly notes: NotesState;
   readonly tags: TagsState;
   isSessionsModalVisible = false;
+  isPremiumContentModalVisible = false;
 
   private appEventObserverRemovers: (() => void)[] = [];
 
@@ -131,12 +132,15 @@ export class AppState {
     makeObservable(this, {
       showBetaWarning: observable,
       isSessionsModalVisible: observable,
+      isPremiumContentModalVisible: observable,
       preferences: observable,
 
       enableBetaWarning: action,
       disableBetaWarning: action,
       openSessionsModal: action,
       closeSessionsModal: action,
+      openPremiumContentModal: action,
+      closePremiumContentModal: action,
     });
   }
 
@@ -167,6 +171,14 @@ export class AppState {
 
   closeSessionsModal() {
     this.isSessionsModalVisible = false;
+  }
+
+  openPremiumContentModal(): void {
+    this.isPremiumContentModalVisible = true;
+  }
+
+  closePremiumContentModal(): void {
+    this.isPremiumContentModalVisible = false;
   }
 
   disableBetaWarning() {

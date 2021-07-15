@@ -116,6 +116,8 @@ export const Strings = {
   trashNotesTitle: 'Move to Trash',
   trashNotesText: 'Are you sure you want to move these notes to the trash?',
   enterPasscode: 'Please enter a passcode.',
+  premiumContentTitle: 'Available in Plus and Pro plans',
+  premiumContentText: 'Subscribe and enjoy the benefits, such as two factor authentication, cloud backups, 365-day note history and many more.'
 };
 
 export const StringUtils = {
