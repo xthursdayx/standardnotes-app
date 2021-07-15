@@ -12,6 +12,43 @@
   text-decoration: underline;
 }
 
+.w-89 {
+  width: 22.25rem;
+}
+
+.z-index-10000 {
+  z-index: 10000;
+}
+
+.opacity-48 {
+  opacity: 0.48;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
 .sn-icon {
   @extend .h-5;
   @extend .w-5;

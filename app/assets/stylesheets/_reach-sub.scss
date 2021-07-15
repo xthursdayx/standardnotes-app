@@ -1,4 +1,4 @@
-[data-reach-dialog-overlay] {
+[data-reach-dialog-overlay].sk-modal {
   z-index: $z-index-modal;
   background: none;
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
   overflow: unset;
 }
-[data-reach-dialog-overlay]::before {
+[data-reach-dialog-overlay].sk-modal::before {
   background-color: var(--sn-stylekit-contrast-background-color);
   content: "";
   position: fixed;
@@ -19,7 +19,9 @@
 
 }
 
-[data-reach-dialog-content] {
+[data-reach-dialog-content] .sk-modal-content,
+[data-reach-dialog-content] .sk-panel {
+  height: 100%;
   width: auto;
   padding: 0;
   margin: 0;
@@ -29,12 +31,6 @@
   min-width: 400px;
   max-width: 600px;
   background: none;
-}
-
-[data-reach-dialog-content] .sk-modal-content,
-[data-reach-dialog-content] .sn-component,
-[data-reach-dialog-content] .sk-panel {
-  height: 100%;
 }
 
 [data-reach-alert-dialog-content] {
