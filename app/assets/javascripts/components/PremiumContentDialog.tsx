@@ -8,7 +8,7 @@ type Props = {
   appState: AppState;
 };
 
-const PremiumContentDialog = observer(({ appState }: Props) =>{
+const PremiumContentDialog = observer(({ appState }: Props) => {
   const { isPremiumContentModalVisible } = appState;
   console.log(isPremiumContentModalVisible);
 

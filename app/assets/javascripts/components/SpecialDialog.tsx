@@ -50,7 +50,9 @@ export const SpecialDialog: FunctionComponent<SpecialDialogProps> = ({
           </button>
         </div>
         <div className="flex flex-col items-center px-5 pb-5">
-          {illustration && <Illustration type={illustration} className="mb-4" />}
+          {illustration && (
+            <Illustration type={illustration} className="mb-4" />
+          )}
           <h1 className="text-lg m-0">{title}</h1>
           <p className="text-sm text-center mt-2">{body}</p>
           {primaryButtonHref ? (
