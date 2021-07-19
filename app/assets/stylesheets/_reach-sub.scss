@@ -1,4 +1,4 @@
-[data-reach-dialog-overlay].sk-modal {
+[data-reach-dialog-overlay]:not(.sn-component) {
   z-index: $z-index-modal;
   background: none;
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
   overflow: unset;
 }
-[data-reach-dialog-overlay].sk-modal::before {
+[data-reach-dialog-overlay]:not(.sn-component)::before {
   background-color: var(--sn-stylekit-contrast-background-color);
   content: "";
   position: fixed;
@@ -16,7 +16,6 @@
   bottom: 0px;
   left: 0px;
   opacity: 0.75;
-
 }
 
 [data-reach-dialog-content] .sk-modal-content,
