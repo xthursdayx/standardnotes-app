@@ -5,12 +5,18 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@reach/disclosure';
-import { ContentType, SNTheme } from '@standardnotes/snjs';
+import {
+  ContentType,
+  SNTheme,
+  ComponentArea,
+  SNComponent,
+} from '@standardnotes/snjs';
 import { observer } from 'mobx-react-lite';
 import { FunctionComponent } from 'preact';
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { Icon } from './Icon';
+import { Switch } from './Switch';
 import { toDirective, useCloseOnBlur } from './utils';
 
 const MENU_CLASSNAME =
@@ -32,7 +38,8 @@ const ThemeButton: FunctionComponent<ThemeButtonProps> = ({
   theme,
   onBlur,
 }) => {
-  const toggleTheme = () => {
+  const toggleTheme = (e: any) => {
+    e.preventDefault();
     if (theme.isLayerable() || !theme.active) {
       application.toggleComponent(theme);
     }
@@ -40,32 +47,41 @@ const ThemeButton: FunctionComponent<ThemeButtonProps> = ({
 
   return (
     <button
-      className="sn-dropdown-item justify-between focus:bg-info-backdrop focus:shadow-none"
+      className={`sn-dropdown-item focus:bg-info-backdrop focus:shadow-none ${
+        theme.isLayerable() ? `justify-start` : `justify-between`
+      }`}
       onClick={toggleTheme}
       onBlur={onBlur}
     >
-      <div className="flex items-center">
-        {theme.isLayerable() ? (
-          theme.active ? (
-            <Icon type="check" className="color-info mr-2" />
-          ) : null
-        ) : (
-          <div
-            className={`pseudo-radio-btn ${
-              theme.active ? 'pseudo-radio-btn--checked' : ''
-            } mr-2`}
-          ></div>
-        )}
-        <span className={theme.active ? 'font-semibold' : undefined}>
+      {theme.isLayerable() ? (
+        <>
+          <Switch
+            className="px-0 mr-2"
+            checked={theme.active}
+            onChange={toggleTheme}
+          />
           {theme.package_info.name}
-        </span>
-      </div>
-      <div
-        className="w-5 h-5 rounded-full"
-        style={{
-          backgroundColor: theme.package_info?.dock_icon?.background_color,
-        }}
-      ></div>
+        </>
+      ) : (
+        <>
+          <div className="flex items-center">
+            <div
+              className={`pseudo-radio-btn ${
+                theme.active ? 'pseudo-radio-btn--checked' : ''
+              } mr-2`}
+            ></div>
+            <span className={theme.active ? 'font-semibold' : undefined}>
+              {theme.package_info.name}
+            </span>
+          </div>
+          <div
+            className="w-5 h-5 rounded-full"
+            style={{
+              backgroundColor: theme.package_info?.dock_icon?.background_color,
+            }}
+          ></div>
+        </>
+      )}
     </button>
   );
 };
@@ -75,15 +91,18 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
     const { closeQuickSettingsMenu, shouldAnimateCloseMenu } =
       appState.quickSettingsMenu;
     const [themes, setThemes] = useState<SNTheme[]>([]);
+    const [toggleableComponents, setToggleableComponents] = useState<
+      SNComponent[]
+    >([]);
     const [themesMenuOpen, setThemesMenuOpen] = useState(false);
     const [themesMenuPosition, setThemesMenuPosition] = useState({});
     const [defaultThemeOn, setDefaultThemeOn] = useState(false);
 
-    const themesMenuRef = useRef<HTMLDivElement>();
-    const themesButtonRef = useRef<HTMLButtonElement>();
-    const prefsButtonRef = useRef<HTMLButtonElement>();
-    const quickSettingsMenuRef = useRef<HTMLDivElement>();
-    const defaultThemeButtonRef = useRef<HTMLButtonElement>();
+    const themesMenuRef = useRef<HTMLDivElement>(null);
+    const themesButtonRef = useRef<HTMLButtonElement>(null);
+    const prefsButtonRef = useRef<HTMLButtonElement>(null);
+    const quickSettingsMenuRef = useRef<HTMLDivElement>(null);
+    const defaultThemeButtonRef = useRef<HTMLButtonElement>(null);
 
     const reloadThemes = useCallback(() => {
       application.streamItems(ContentType.Theme, () => {
@@ -113,26 +132,48 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
       });
     }, [application]);
 
+    const reloadToggleableComponents = useCallback(() => {
+      application.streamItems(ContentType.Component, () => {
+        const toggleableComponents = (
+          application.getDisplayableItems(
+            ContentType.Component
+          ) as SNComponent[]
+        ).filter((component) =>
+          [ComponentArea.EditorStack, ComponentArea.TagsList].includes(
+            component.area
+          )
+        );
+        setToggleableComponents(toggleableComponents);
+      });
+    }, [application]);
+
     useEffect(() => {
       reloadThemes();
     }, [reloadThemes]);
 
     useEffect(() => {
+      reloadToggleableComponents();
+    }, [reloadToggleableComponents]);
+
+    useEffect(() => {
       if (themesMenuOpen) {
-        defaultThemeButtonRef.current.focus();
+        defaultThemeButtonRef.current!.focus();
       }
     }, [themesMenuOpen]);
 
     useEffect(() => {
-      prefsButtonRef.current.focus();
+      prefsButtonRef.current!.focus();
     }, []);
 
-    const [closeOnBlur] = useCloseOnBlur(themesMenuRef, setThemesMenuOpen);
+    const [closeOnBlur] = useCloseOnBlur(
+      themesMenuRef as any,
+      setThemesMenuOpen
+    );
 
     const toggleThemesMenu = () => {
       if (!themesMenuOpen) {
         const themesButtonRect =
-          themesButtonRef.current.getBoundingClientRect();
+          themesButtonRef.current!.getBoundingClientRect();
         setThemesMenuPosition({
           left: themesButtonRect.right,
           bottom:
@@ -149,13 +190,17 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
       appState.preferences.openPreferences();
     };
 
+    const toggleComponent = (component: SNComponent) => {
+      application.toggleComponent(component);
+    };
+
     const handleBtnKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (
       event
     ) => {
       switch (event.key) {
         case 'Escape':
           setThemesMenuOpen(false);
-          themesButtonRef.current.focus();
+          themesButtonRef.current!.focus();
           break;
         case 'ArrowRight':
           if (!themesMenuOpen) {
@@ -167,7 +212,7 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
     const handleQuickSettingsKeyDown: JSXInternal.KeyboardEventHandler<HTMLDivElement> =
       (event) => {
         const items: NodeListOf<HTMLButtonElement> =
-          quickSettingsMenuRef.current.querySelectorAll(':scope > button');
+          quickSettingsMenuRef.current!.querySelectorAll(':scope > button');
         const currentFocusedIndex = Array.from(items).findIndex(
           (btn) => btn === document.activeElement
         );
@@ -198,7 +243,7 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
     const handlePanelKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (
       event
     ) => {
-      const themes = themesMenuRef.current.querySelectorAll('button');
+      const themes = themesMenuRef.current!.querySelectorAll('button');
       const currentFocusedIndex = Array.from(themes).findIndex(
         (themeBtn) => themeBtn === document.activeElement
       );
@@ -208,7 +253,7 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
         case 'ArrowLeft':
           event.stopPropagation();
           setThemesMenuOpen(false);
-          themesButtonRef.current.focus();
+          themesButtonRef.current!.focus();
           break;
         case 'ArrowDown':
           if (themes[currentFocusedIndex + 1]) {
@@ -296,6 +341,22 @@ const QuickSettingsMenu: FunctionComponent<MenuProps> = observer(
               ))}
             </DisclosurePanel>
           </Disclosure>
+
+          {toggleableComponents.map((component) => (
+            <Switch
+              className="sn-dropdown-item focus:bg-info-backdrop focus:shadow-none"
+              checked={component.active}
+              onChange={() => {
+                toggleComponent(component);
+              }}
+            >
+              <div className="flex items-center">
+                <Icon type="window" className="color-neutral mr-2" />
+                {component.name}
+              </div>
+            </Switch>
+          ))}
+
           <div className="h-1px my-2 bg-border"></div>
           <button
             class="sn-dropdown-item focus:bg-info-backdrop focus:shadow-none"

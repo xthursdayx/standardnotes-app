@@ -150,8 +150,9 @@ export const NotesOptions = observer(
     const notTrashed = notes.some((note) => !note.trashed);
     const pinned = notes.some((note) => note.pinned);
     const unpinned = notes.some((note) => !note.pinned);
+    const errored = notes.some((note) => note.errorDecrypting);
 
-    const tagsButtonRef = useRef<HTMLButtonElement>();
+    const tagsButtonRef = useRef<HTMLButtonElement>(null);
 
     const iconClass = 'color-neutral mr-2';
 
@@ -183,7 +184,7 @@ export const NotesOptions = observer(
       ).fontSize;
       const maxTagsMenuSize = parseFloat(defaultFontSize) * 30;
       const { clientWidth, clientHeight } = document.documentElement;
-      const buttonRect = tagsButtonRef.current.getBoundingClientRect();
+      const buttonRect = tagsButtonRef.current!.getBoundingClientRect();
       const footerHeight = 32;
 
       if (buttonRect.top + maxTagsMenuSize > clientHeight - footerHeight) {
@@ -224,6 +225,19 @@ export const NotesOptions = observer(
         application.duplicateItem(note);
       });
     };
+
+    if (errored) {
+      return (
+        <>
+          <DeletePermanentlyButton
+            closeOnBlur={closeOnBlur}
+            onClick={async () => {
+              await appState.notes.deleteNotesPermanently();
+            }}
+          />
+        </>
+      );
+    }
 
     return (
       <>
@@ -289,7 +303,7 @@ export const NotesOptions = observer(
               onKeyDown={(event) => {
                 if (event.key === 'Escape') {
                   setTagsMenuOpen(false);
-                  tagsButtonRef.current.focus();
+                  tagsButtonRef.current!.focus();
                 }
               }}
               style={{
