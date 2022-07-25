@@ -67,7 +67,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.7.1)
     minitest (5.15.0)
-    newrelic_rpm (7.2.0)
+    newrelic_rpm (8.9.0)
     nio4r (2.5.8)
     nokogiri (1.13.1)
       mini_portile2 (~> 2.7.0)
@@ -146,7 +146,7 @@ DEPENDENCIES
   byebug
   dotenv-rails
   lograge (~> 0.11.2)
-  newrelic_rpm (~> 7.0)
+  newrelic_rpm (~> 8.9)
   non-stupid-digest-assets
   puma
   rack-cors
