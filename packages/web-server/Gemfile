@@ -12,5 +12,5 @@ group :development, :test do
   gem 'byebug'
   gem 'puma'
   gem 'spring'
-  gem 'web-console', '3.5.1'
+  gem 'web-console', '3.7.0'
 end
