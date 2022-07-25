@@ -83,7 +83,7 @@
     "@standardnotes/utils": "workspace:*"
   },
   "devDependencies": {
-    "@reach/alert-dialog": "0.16.2",
+    "@reach/alert-dialog": "0.17.0",
     "@reach/menu-button": "0.16.2",
     "@reach/visually-hidden": "0.16.0",
     "@react-hook/resize-observer": "^1.2.5",
