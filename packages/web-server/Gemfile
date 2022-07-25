@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'dotenv-rails'
-gem 'lograge', '~> 0.11.2'
+gem 'lograge', '~> 0.12.0'
 gem 'newrelic_rpm', '~> 7.0'
 gem 'non-stupid-digest-assets'
 gem 'rack-cors', require: 'rack/cors'
