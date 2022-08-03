@@ -23,7 +23,7 @@
     "@babel/preset-env": "^7.13.12",
     "@standardnotes/component-relay": "2.2.0",
     "copy-webpack-plugin": "*",
-    "css-loader": "^5.2.0",
+    "css-loader": "^6.7.1",
     "dompurify": "^2.2.9",
     "easymde": "2.16.1",
     "eslint": "*",
