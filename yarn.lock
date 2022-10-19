@@ -5301,6 +5301,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reach/auto-id@npm:0.18.0":
+  version: 0.18.0
+  resolution: "@reach/auto-id@npm:0.18.0"
+  dependencies:
+    "@reach/utils": 0.18.0
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+    react-dom: ^16.8.0 || 17.x
+  checksum: 75a37a0a09c382dfc358d37f3212cffdea2b4c80c2f555b7fee857af59a46e959324234be8dbb51c476fba0874ed93694254079192b478ce3e9abba5ce63fdec
+  languageName: node
+  linkType: hard
+
 "@reach/checkbox@npm:^0.17.0":
   version: 0.17.0
   resolution: "@reach/checkbox@npm:0.17.0"
@@ -5402,6 +5414,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reach/polymorphic@npm:0.18.0":
+  version: 0.18.0
+  resolution: "@reach/polymorphic@npm:0.18.0"
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+  checksum: 0d62260a55c71e0dc95f38867f24b3d699e0bb7ea2273c6fa5a1fa3d804269e2deb63a458f1f1eb7b74c32bc0add3ab31a1c2668c1dee6b2837187876d3c4cc2
+  languageName: node
+  linkType: hard
+
 "@reach/popover@npm:0.17.0":
   version: 0.17.0
   resolution: "@reach/popover@npm:0.17.0"
@@ -5432,6 +5453,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reach/portal@npm:0.18.0":
+  version: 0.18.0
+  resolution: "@reach/portal@npm:0.18.0"
+  dependencies:
+    "@reach/utils": 0.18.0
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+    react-dom: ^16.8.0 || 17.x
+  checksum: bd54c694922ac8e8ae6ef515547214c1eb05fd7ce5514e1046fd3504e37aa440ba4fb62fdd8664fdcd47e9b865b3ee085b58942c0db667146da6eec2dc269fa3
+  languageName: node
+  linkType: hard
+
 "@reach/rect@npm:0.17.0":
   version: 0.17.0
   resolution: "@reach/rect@npm:0.17.0"
@@ -5448,22 +5481,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reach/tooltip@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@reach/tooltip@npm:0.17.0"
+"@reach/rect@npm:0.18.0":
+  version: 0.18.0
+  resolution: "@reach/rect@npm:0.18.0"
   dependencies:
-    "@reach/auto-id": 0.17.0
-    "@reach/portal": 0.17.0
-    "@reach/rect": 0.17.0
-    "@reach/utils": 0.17.0
-    "@reach/visually-hidden": 0.17.0
-    prop-types: ^15.7.2
-    tiny-warning: ^1.0.3
-    tslib: ^2.3.0
+    "@reach/observe-rect": 1.2.0
+    "@reach/utils": 0.18.0
   peerDependencies:
     react: ^16.8.0 || 17.x
     react-dom: ^16.8.0 || 17.x
-  checksum: 483b0ab538f927032cb75c57102caa06567706c71ecc886506307a8c6247c1fab862819f899871923e847901631f693f606c05c7aa0097704485fc03bad2073a
+  checksum: 5e9fbfb3b6bf62b4f7fd289cde8f22ab11ba3462112761144aad3fe0c4bd0c0bbb7d1489d436151ed964c65d2ff10a6eb3b5a861dd9b7d439f5c2099539e51fc
+  languageName: node
+  linkType: hard
+
+"@reach/tooltip@npm:^0.18.0":
+  version: 0.18.0
+  resolution: "@reach/tooltip@npm:0.18.0"
+  dependencies:
+    "@reach/auto-id": 0.18.0
+    "@reach/polymorphic": 0.18.0
+    "@reach/portal": 0.18.0
+    "@reach/rect": 0.18.0
+    "@reach/utils": 0.18.0
+    "@reach/visually-hidden": 0.18.0
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+    react-dom: ^16.8.0 || 17.x
+  checksum: 4080b15c1b5d313751bcb4a7494e83e36d280e4a9bd35df39c62d26b658a18ce1e25d1e2f68bb1bb018a48bffc607049f14d262c7576bfd25a608cfa9c6d4e28
   languageName: node
   linkType: hard
 
@@ -5480,6 +5524,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reach/utils@npm:0.18.0":
+  version: 0.18.0
+  resolution: "@reach/utils@npm:0.18.0"
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+    react-dom: ^16.8.0 || 17.x
+  checksum: eeda20a74c1db71e95680c622371c6efc46e2c767b28902bc43b580654436a34ec7f8b5f63c51a7c4cc8fd48c94066e3215496ba5a053c96e65c7a9bdcdc2687
+  languageName: node
+  linkType: hard
+
 "@reach/visually-hidden@npm:0.17.0, @reach/visually-hidden@npm:^0.17.0":
   version: 0.17.0
   resolution: "@reach/visually-hidden@npm:0.17.0"
@@ -5490,6 +5544,18 @@ __metadata:
     react: ^16.8.0 || 17.x
     react-dom: ^16.8.0 || 17.x
   checksum: 8b665ee5740dbd616bcd5b5dd5e3a3e5f2b3984819bb1dc20c5ec11690523c86eeb8b28254b193d5ac9261bc25341287229185bc0a4591e10182cc80ed2882bc
+  languageName: node
+  linkType: hard
+
+"@reach/visually-hidden@npm:0.18.0":
+  version: 0.18.0
+  resolution: "@reach/visually-hidden@npm:0.18.0"
+  dependencies:
+    "@reach/polymorphic": 0.18.0
+  peerDependencies:
+    react: ^16.8.0 || 17.x || 18.x
+    react-dom: ^16.8.0 || 17.x || 18.x
+  checksum: 675ad41121d0ae52a55d3e75ad9e60a4ca7cb91defe756565bf7b8fb3d27553d76f851f9cd069455240ec955465d6e235a8f92b73859e091265607b0cb3358ae
   languageName: node
   linkType: hard
 
@@ -7070,7 +7136,7 @@ __metadata:
     "@reach/dialog": ^0.17.0
     "@reach/disclosure": ^0.17.0
     "@reach/listbox": ^0.17.0
-    "@reach/tooltip": ^0.17.0
+    "@reach/tooltip": ^0.18.0
     "@reach/visually-hidden": ^0.17.0
     "@standardnotes/components-meta": "workspace:*"
     "@standardnotes/filepicker": "workspace:*"
