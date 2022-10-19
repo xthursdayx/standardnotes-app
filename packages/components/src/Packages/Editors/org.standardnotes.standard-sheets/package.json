@@ -25,7 +25,7 @@
     "@standardnotes/eslint-config-extensions": "^1.0.4",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "*",
-    "css-loader": "^5.2.6",
+    "css-loader": "^6.7.1",
     "eslint": "*",
     "eslint-plugin-react": "^7.24.0",
     "mini-css-extract-plugin": "^2.0.0",

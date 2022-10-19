@@ -21,7 +21,7 @@
     "@standardnotes/editor-kit": "2.2.3",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "*",
-    "css-loader": "^5.2.0",
+    "css-loader": "^6.7.1",
     "dompurify": "^2.2.9",
     "eslint": "*",
     "eslint-plugin-react": "*",
