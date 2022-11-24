@@ -38,7 +38,7 @@
     "@standardnotes/snjs": "workspace:*",
     "@standardnotes/web": "workspace:*",
     "@types/react": "^18.0.21",
-    "@types/react-native": "^0.67.3",
+    "@types/react-native": "^0.70.7",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "babel-jest": "^27.5.1",
