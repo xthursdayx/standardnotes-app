@@ -5480,7 +5480,7 @@ __metadata:
     "@types/react": ^18.0.25
     "@types/react-dom": ^18.0.9
     eslint: "*"
-    lexical: ^0.6.0
+    lexical: ^0.7.1
     prettier: "*"
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -6333,7 +6333,7 @@ __metadata:
     identity-obj-proxy: ^3.0.0
     jest: ^29.3.1
     jest-environment-jsdom: ^29.3.1
-    lexical: 0.6.0
+    lexical: 0.7.1
     lint-staged: ">=13"
     mini-css-extract-plugin: ^2.6.1
     minimatch: ^5.1.0
@@ -19396,10 +19396,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lexical@npm:0.6.0, lexical@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "lexical@npm:0.6.0"
-  checksum: cac65609c231d9494b5f183fd50fc579d0df8af9c0075ef9e293d2fff21af8b84f66d97bebb7714edddd365d4f4d019a151d24838ffdce422d53815c7b1a0519
+"lexical@npm:0.7.1, lexical@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "lexical@npm:0.7.1"
+  checksum: f38fa3ce8ae7e3f1fdd4d56e73a7508386e679849626ceba842f9d71e8feab1fa639bb87d6f3ce672e94136500b3b0c1ab4b89df5be554393f4497cf365b37c0
   languageName: node
   linkType: hard
 
