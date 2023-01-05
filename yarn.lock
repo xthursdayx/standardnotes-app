@@ -25374,9 +25374,9 @@ __metadata:
   linkType: hard
 
 "react-native-share@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "react-native-share@npm:8.0.0"
-  checksum: f22e672bae9eb5da793b1a2296d45a4554440a537e479b21ecfcc61fc5619ba7e7d238a3b69f5276709bb47e2758705cf47763b7c9c80fee84241b04b410d86e
+  version: 8.1.0
+  resolution: "react-native-share@npm:8.1.0"
+  checksum: d33a5adcc82ee9c59aca57227c27d52dee1c1e19ff2ec2faff1fc3b9bab29fa3bc4119672c464c7daf59f8890e222fe6d11254038c875c2837259b5729a740d8
   languageName: node
   linkType: hard
 
