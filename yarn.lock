@@ -5522,6 +5522,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@standardnotes/common@npm:1.46.1":
+  version: 1.46.1
+  resolution: "@standardnotes/common@npm:1.46.1"
+  dependencies:
+    reflect-metadata: ^0.1.13
+  checksum: ff9bed549c734319085e2f1cd38b9cf6b444cd79a3ffad1c2d768390a8d6784344c8f94b2e1d280b7b5ccbe7bdb158e0d6dcc5ec184bd1bf1e7ec1800381a78d
+  languageName: node
+  linkType: hard
+
 "@standardnotes/common@npm:^1.43.0":
   version: 1.43.0
   resolution: "@standardnotes/common@npm:1.43.0"
@@ -5623,15 +5632,15 @@ __metadata:
   linkType: soft
 
 "@standardnotes/domain-events@npm:^2.88.0":
-  version: 2.88.0
-  resolution: "@standardnotes/domain-events@npm:2.88.0"
+  version: 2.105.2
+  resolution: "@standardnotes/domain-events@npm:2.105.2"
   dependencies:
-    "@standardnotes/common": 1.45.0
+    "@standardnotes/common": 1.46.1
     "@standardnotes/features": ^1.52.1
-    "@standardnotes/predicates": 1.6.0
-    "@standardnotes/security": 1.7.0
+    "@standardnotes/predicates": 1.6.2
+    "@standardnotes/security": 1.7.3
     reflect-metadata: ^0.1.13
-  checksum: 8574ba4c7efe96ff7bb98612d4b5f0ceef3e81d5e9c401396bd5b3a8bc1d6382d059958261b88a117fe6eaf5c96fed3dd5969efe67fe3669d7badd2113ed47fb
+  checksum: 8d19a54fa8e4308fb966041954cebdbd4e4e7080be7e61fb4b7519c56356d80b7a8ecf643cc7a8a7f870f4cf78bec0c69022e5fe34ef315bfc52217c0ec1c5ff
   languageName: node
   linkType: hard
 
@@ -5919,13 +5928,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@standardnotes/predicates@npm:1.6.0":
-  version: 1.6.0
-  resolution: "@standardnotes/predicates@npm:1.6.0"
+"@standardnotes/predicates@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@standardnotes/predicates@npm:1.6.2"
   dependencies:
-    "@standardnotes/common": 1.45.0
+    "@standardnotes/common": 1.46.1
     reflect-metadata: ^0.1.13
-  checksum: 020e2206c75e6b964bf400314a116b29ece5f9e662a5dd6704de8864aaec1689256b008334db5f2983addc039d3b7f4a8108c87789e61d37a8ba9161ea93cfa0
+  checksum: c9c47aa33d5bba5f8522160000025960eeb2cc36fb518999973c07eddf3986658ad927f9763b76414dd17011d3da7a98c2fb862197a0f6f2b8286c925bd694c7
   languageName: node
   linkType: hard
 
@@ -5975,14 +5984,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@standardnotes/security@npm:1.7.0, @standardnotes/security@npm:^1.7.0":
-  version: 1.7.0
-  resolution: "@standardnotes/security@npm:1.7.0"
+"@standardnotes/security@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@standardnotes/security@npm:1.7.3"
   dependencies:
-    "@standardnotes/common": 1.45.0
-    jsonwebtoken: ^8.5.1
+    "@standardnotes/common": 1.46.1
+    jsonwebtoken: ^9.0.0
     reflect-metadata: ^0.1.13
-  checksum: c053af16e620c29e8b9233212e5b220cebc7e71c195b5c63cd6fb68b617465c935ae1c926ebc6a4c9aff32487e538e949a3fe4a9e281d082c2fddcc9d17fa3a7
+  checksum: 2aa7bb29f176ad7c725a06933eafdaa43ee6c65f110aac277f043714c0d9572467d0603e5cd420c6d52e8dba8273aaf592e5e26b981be3d0674b698286fd4096
   languageName: node
   linkType: hard
 
@@ -5994,6 +6003,17 @@ __metadata:
     jsonwebtoken: ^8.5.1
     reflect-metadata: ^0.1.13
   checksum: 66e822264461b365ac3e7b2431610b727add6d54b3b4b49d5d49d996a7a122bffdd4ae004c24d91256c051cba4080103e1732affaf1924ec46ebc6db0de20e8b
+  languageName: node
+  linkType: hard
+
+"@standardnotes/security@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@standardnotes/security@npm:1.7.0"
+  dependencies:
+    "@standardnotes/common": 1.45.0
+    jsonwebtoken: ^8.5.1
+    reflect-metadata: ^0.1.13
+  checksum: c053af16e620c29e8b9233212e5b220cebc7e71c195b5c63cd6fb68b617465c935ae1c926ebc6a4c9aff32487e538e949a3fe4a9e281d082c2fddcc9d17fa3a7
   languageName: node
   linkType: hard
 
@@ -19162,6 +19182,18 @@ __metadata:
     ms: ^2.1.1
     semver: ^5.6.0
   checksum: 93c9e3f23c59b758ac88ba15f4e4753b3749dfce7a6f7c40fb86663128a1e282db085eec852d4e0cbca4cefdcd3a8275ee255dbd08fcad0df26ad9f6e4cc853a
+  languageName: node
+  linkType: hard
+
+"jsonwebtoken@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "jsonwebtoken@npm:9.0.0"
+  dependencies:
+    jws: ^3.2.2
+    lodash: ^4.17.21
+    ms: ^2.1.1
+    semver: ^7.3.8
+  checksum: b9181cecf9df99f1dc0253f91ba000a1aa4d91f5816d1608c0dba61a5623726a0bfe200b51df25de18c1a6000825d231ad7ce2788aa54fd48dcb760ad9eb9514
   languageName: node
   linkType: hard
 
