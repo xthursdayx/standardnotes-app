@@ -6690,9 +6690,9 @@ __metadata:
   linkType: hard
 
 "@zip.js/zip.js@npm:^2.6.60":
-  version: 2.6.60
-  resolution: "@zip.js/zip.js@npm:2.6.60"
-  checksum: ad595397d8a0d469e75ad988690b2c5ca5627fe8ff5c5acc6ed80d117061aaeed348082a334180421909ed5070084a98421de60b2becd1a23500b072c3577e09
+  version: 2.6.62
+  resolution: "@zip.js/zip.js@npm:2.6.62"
+  checksum: 75e34752a3d06b103d2125c1c32e706047fc68464d85984be1060d4c4b801976c8d61f29d48e7271e191d39d6fb4b4a0c78512d17197011f520155c4719bf59b
   languageName: node
   linkType: hard
 
