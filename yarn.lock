@@ -6719,9 +6719,9 @@ __metadata:
   linkType: hard
 
 "@zip.js/zip.js@npm:^2.6.60":
-  version: 2.6.60
-  resolution: "@zip.js/zip.js@npm:2.6.60"
-  checksum: ad595397d8a0d469e75ad988690b2c5ca5627fe8ff5c5acc6ed80d117061aaeed348082a334180421909ed5070084a98421de60b2becd1a23500b072c3577e09
+  version: 2.6.81
+  resolution: "@zip.js/zip.js@npm:2.6.81"
+  checksum: fbb4bfec6b432a5e6ff7f298b3bbe31115ed1f46b8fb8426b4eb212f72c6f24984e0617fd7d4e6654a3d24141638ead3d781ad7ab49302db4c14a53345aee751
   languageName: node
   linkType: hard
 
